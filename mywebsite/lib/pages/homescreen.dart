@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mywebsite/constants/colors.dart';
+import 'package:mywebsite/widgets/header-desktop.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,10 +18,7 @@ class _HomePageState extends State<HomePage> {
           scrollDirection: Axis.vertical,
           children: [
             //main
-            Container(
-              height: 500,
-              width: double.maxFinite,
-            ),
+            const HeaderDesktop(),
             //Skills
             Container(
               height: 500,
