@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mywebsite/constants/colors.dart';
-import 'package:mywebsite/widgets/sitelogo.dart';
+import 'package:mywebsite/widgets/header-mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,21 +19,9 @@ class _HomePageState extends State<HomePage> {
           children: [
             //main
             // const HeaderDesktop(),
-            Container(
-              height: 50.0,
-              margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
-              child: Row(
-                children: [
-                  SiteLogo(
-                    onTap: () {},
-                  ),
-                  const Spacer(),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.menu),
-                  )
-                ],
-              ),
+            HeaderMobile(
+              onLogoTap: () {},
+              onMenuTap: () {},
             ),
             //Skills
             Container(
