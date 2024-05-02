@@ -10,10 +10,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        key: scaffoldKey,
         backgroundColor: CustomColor.scaffoldBg,
+        endDrawer: Drawer(),
         body: ListView(
           scrollDirection: Axis.vertical,
           children: [
@@ -21,7 +24,9 @@ class _HomePageState extends State<HomePage> {
             // const HeaderDesktop(),
             HeaderMobile(
               onLogoTap: () {},
-              onMenuTap: () {},
+              onMenuTap: () {
+                scaffoldKey.currentState?.openEndDrawer();
+              },
             ),
             //Skills
             Container(
