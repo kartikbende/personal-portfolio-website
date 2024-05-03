@@ -17,10 +17,9 @@ class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final screenWidth = screenSize.width;
-    return LayoutBuilder(builder: (context, constraints) {
-      return Scaffold(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Scaffold(
           key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
           endDrawer:
@@ -49,6 +48,7 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: 500,
                 width: double.maxFinite,
+                color: Colors.blueGrey.shade400,
               ),
               //CONTACT
               Container(
@@ -60,9 +60,12 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: 500,
                 width: double.maxFinite,
+                color: Colors.blueGrey.shade400,
               ),
             ],
-          ));
-    });
+          ),
+        );
+      },
+    );
   }
 }
