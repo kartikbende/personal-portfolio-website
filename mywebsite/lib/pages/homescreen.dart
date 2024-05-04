@@ -6,6 +6,8 @@ import 'package:mywebsite/widgets/header-desktop.dart';
 import 'package:mywebsite/widgets/header-mobile.dart';
 import 'package:mywebsite/widgets/main_desktop.dart';
 import 'package:mywebsite/widgets/main_mobile.dart';
+import 'package:mywebsite/widgets/skills_desktop.dart';
+import 'package:mywebsite/widgets/skills_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -48,9 +50,32 @@ class _HomePageState extends State<HomePage> {
                 const MainMobile(),
               //Skills
               Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey.shade200,
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.bgLight1,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // title
+                    const Text(
+                      "What i can do",
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.whitePrimary,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 50.0,
+                    ),
+                    // platforms and skills
+                    // const SkillsDesktop(),
+                    if (constraints.maxWidth >= meddesktopwidth)
+                      const SkillsDesktop()
+                    else
+                      const SkillsMobile(),
+                  ],
+                ),
               ),
               //PROJECTS
               Container(
