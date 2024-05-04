@@ -51,7 +51,7 @@ class Maindesktop extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
           Image.asset(

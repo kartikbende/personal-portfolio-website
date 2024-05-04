@@ -5,6 +5,7 @@ import 'package:mywebsite/widgets/drawer_mobile.dart';
 import 'package:mywebsite/widgets/header-desktop.dart';
 import 'package:mywebsite/widgets/header-mobile.dart';
 import 'package:mywebsite/widgets/main_desktop.dart';
+import 'package:mywebsite/widgets/main_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,6 +18,9 @@ class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
@@ -37,7 +41,11 @@ class _HomePageState extends State<HomePage> {
                     scaffoldKey.currentState?.openEndDrawer();
                   },
                 ),
-              const Maindesktop(),
+
+              if (constraints.maxWidth >= mindeskwidth)
+                const Maindesktop()
+              else
+                const MainMobile(),
               //Skills
               Container(
                 height: 500,
