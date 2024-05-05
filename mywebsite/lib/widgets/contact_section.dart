@@ -108,7 +108,7 @@ class ContactSection extends StatelessWidget {
                   js.context.callMethod('open', [SnsLinks.twitter]);
                 },
                 child: Image.asset(
-                  "assets/x.jpg",
+                  "assets/x.png",
                   width: 28,
                 ),
               ),

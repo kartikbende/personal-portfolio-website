@@ -3,7 +3,11 @@ import 'package:mywebsite/constants/colors.dart';
 import 'package:mywebsite/constants/nav_items.dart';
 
 class DrawerM extends StatelessWidget {
-  const DrawerM({super.key});
+  const DrawerM({
+    super.key,
+    required this.onNavItemClick,
+  });
+  final Function(int) onNavItemClick;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +36,9 @@ class DrawerM extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontSize: 16.0,
               ),
-              onTap: () {},
+              onTap: () {
+                onNavItemClick(i);
+              },
               leading: Icon(navIcons[i]),
               title: Text(navTitles[i]),
             ),
