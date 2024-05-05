@@ -71,9 +71,17 @@ class _HomePageState extends State<HomePage> {
                   ),
                 // main
                 if (constraints.maxWidth >= mindeskwidth)
-                  const Maindesktop()
+                  Maindesktop(
+                    onLogoTap: () {
+                      scrollToSection(3);
+                    },
+                  )
                 else
-                  const MainMobile(),
+                  MainMobile(
+                    onLogoTap: () {
+                      scrollToSection(3);
+                    },
+                  ),
                 const SizedBox(height: 30),
                 // about me
                 // const SizedBox(height: 30),

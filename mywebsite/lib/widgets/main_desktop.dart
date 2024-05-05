@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mywebsite/constants/colors.dart';
 
 class Maindesktop extends StatelessWidget {
-  const Maindesktop({super.key});
+  const Maindesktop({super.key, this.onLogoTap});
+  final VoidCallback? onLogoTap;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class Maindesktop extends StatelessWidget {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: CustomColor.yewllowPrimary),
-                    onPressed: () {},
+                    onPressed: onLogoTap,
                     child: const Text(
                       "Get In Touch",
                       style: TextStyle(
