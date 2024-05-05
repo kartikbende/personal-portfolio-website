@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mywebsite/constants/colors.dart';
 import 'package:mywebsite/constants/sized.dart';
+import 'package:mywebsite/widgets/contact_section.dart';
 import 'package:mywebsite/widgets/drawer_mobile.dart';
 import 'package:mywebsite/widgets/footer.dart';
 import 'package:mywebsite/widgets/header-desktop.dart';
@@ -81,12 +82,13 @@ class _HomePageState extends State<HomePage> {
               ),
               //PROJECTS
               const ProjectsSection(),
-              //CONTACT
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey.shade400,
-              ),
+              const SizedBox(height: 30),
+
+              // CONTACT
+              const ContactSection(
+                  // key: navbarKeys[3],
+                  ),
+              const SizedBox(height: 30),
               //FOOTER
               const Footer(),
             ],
