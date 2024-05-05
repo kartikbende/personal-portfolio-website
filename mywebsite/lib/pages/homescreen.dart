@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mywebsite/constants/colors.dart';
 import 'package:mywebsite/constants/sized.dart';
 import 'package:mywebsite/widgets/drawer_mobile.dart';
+import 'package:mywebsite/widgets/footer.dart';
 import 'package:mywebsite/widgets/header-desktop.dart';
 import 'package:mywebsite/widgets/header-mobile.dart';
 import 'package:mywebsite/widgets/main_desktop.dart';
 import 'package:mywebsite/widgets/main_mobile.dart';
+import 'package:mywebsite/widgets/project_section.dart';
 import 'package:mywebsite/widgets/skills_desktop.dart';
 import 'package:mywebsite/widgets/skills_mobile.dart';
 
@@ -23,6 +25,7 @@ class _HomePageState extends State<HomePage> {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
+
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
@@ -69,7 +72,6 @@ class _HomePageState extends State<HomePage> {
                       height: 50.0,
                     ),
                     // platforms and skills
-                    // const SkillsDesktop(),
                     if (constraints.maxWidth >= meddesktopwidth)
                       const SkillsDesktop()
                     else
@@ -78,11 +80,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               //PROJECTS
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey.shade400,
-              ),
+              const ProjectsSection(),
               //CONTACT
               Container(
                 height: 500,
@@ -90,11 +88,7 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.blueGrey.shade400,
               ),
               //FOOTER
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey.shade400,
-              ),
+              const Footer(),
             ],
           ),
         );
