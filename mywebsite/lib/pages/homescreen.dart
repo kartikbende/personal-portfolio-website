@@ -55,12 +55,16 @@ class _HomePageState extends State<HomePage> {
                   key: navbarkeys.first,
                 ),
                 if (constraints.maxWidth >= mindeskwidth)
-                  HeaderDesktop(onNavMenuTap: (int navIndex) {
-                    scrollToSection(navIndex);
-                  })
+                  HeaderDesktop(
+                    onNavMenuTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    },
+                  )
                 else
                   HeaderMobile(
-                    onLogoTap: () {},
+                    onLogoTap: () {
+                      js.context.callMethod('open', [SnsLinks.github]);
+                    },
                     onMenuTap: () {
                       scaffoldKey.currentState?.openEndDrawer();
                     },
@@ -70,6 +74,9 @@ class _HomePageState extends State<HomePage> {
                   const Maindesktop()
                 else
                   const MainMobile(),
+                const SizedBox(height: 30),
+                // about me
+                // const SizedBox(height: 30),
                 //Skills
                 Container(
                   key: navbarkeys[1],
@@ -99,6 +106,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+
                 //PROJECTS
                 ProjectsSection(
                   key: navbarkeys[2],
